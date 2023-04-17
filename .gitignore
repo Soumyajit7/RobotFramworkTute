@@ -112,6 +112,8 @@ env.bak/
 venv.bak/
 robot_venv/
 Results/
+results/
+
 
 # Spyder project settings
 .spyderproject
