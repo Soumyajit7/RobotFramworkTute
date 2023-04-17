@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.10 on win32)" generated="20230414 18:24:43.503" rpa="false" schemaversion="3">
+<suite id="s1" name="ArgumentsDemo" source="D:\Python\robot_frameworks\Tests\Google\FunctionalTestSuite\ArgumentsDemo.robot">
+<test id="s1-t1" name="Argument demo Test" line="4">
+<kw name="Arguments demo keyword">
+<arg>soumyajit</arg>
+<arg>pan</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${arg1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230414 18:24:43.530" level="INFO">soumyajit</msg>
+<status status="PASS" starttime="20230414 18:24:43.529" endtime="20230414 18:24:43.530"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${arg2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230414 18:24:43.530" level="INFO">pan</msg>
+<status status="PASS" starttime="20230414 18:24:43.530" endtime="20230414 18:24:43.530"/>
+</kw>
+<status status="PASS" starttime="20230414 18:24:43.529" endtime="20230414 18:24:43.530"/>
+</kw>
+<status status="PASS" starttime="20230414 18:24:43.529" endtime="20230414 18:24:43.531"/>
+</test>
+<test id="s1-t2" name="Argument demo Test" line="7">
+<kw name="Arguments demo keyword">
+<arg>Sai</arg>
+<arg>Srujana</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${arg1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230414 18:24:43.533" level="INFO">Sai</msg>
+<status status="PASS" starttime="20230414 18:24:43.533" endtime="20230414 18:24:43.533"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${arg2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230414 18:24:43.533" level="INFO">Srujana</msg>
+<status status="PASS" starttime="20230414 18:24:43.533" endtime="20230414 18:24:43.533"/>
+</kw>
+<status status="PASS" starttime="20230414 18:24:43.533" endtime="20230414 18:24:43.534"/>
+</kw>
+<status status="PASS" starttime="20230414 18:24:43.532" endtime="20230414 18:24:43.534"/>
+</test>
+<status status="PASS" starttime="20230414 18:24:43.506" endtime="20230414 18:24:43.535"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="ArgumentsDemo">ArgumentsDemo</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230414 18:24:43.532" level="WARN">Multiple tests with name 'Argument demo Test' executed in suite 'ArgumentsDemo'.</msg>
+</errors>
+</robot>
