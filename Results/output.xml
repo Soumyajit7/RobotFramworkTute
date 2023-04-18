@@ -1,58 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.9.13 on win32)" generated="20230417 18:19:36.713" rpa="false" schemaversion="3">
-<suite id="s1" name="BasicSearch" source="E:\Pogram_files\Python\PycharmProjects\RobotFramworkTute\Tests\eBay\BasicSearch.robot">
-<test id="s1-t1" name="Verify basic search functionality for eBay" line="15">
-<kw name="Start TestCase">
+<robot generator="Robot 6.0.2 (Python 3.9.13 on win32)" generated="20230418 19:28:18.652" rpa="false" schemaversion="3">
+<suite id="s1" name="iFrame" source="E:\Pogram_files\Python\PycharmProjects\RobotFramworkTute\Tests\Google\FunctionalTestSuite\iFrame.robot">
+<test id="s1-t1" name="This is a sample test case" line="13">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
-<arg>${browser}</arg>
-<arg>executable_path = ${DRIVER PATH}</arg>
+<arg>Chrome</arg>
+<arg>alias=ChromeRCV</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230417 18:19:37.180" level="INFO">Opening browser 'Chrome' to base url 'https://www.ebay.com'.</msg>
-<status status="PASS" starttime="20230417 18:19:37.179" endtime="20230417 18:19:41.522"/>
+<msg timestamp="20230418 19:28:19.009" level="INFO">Opening browser 'Chrome' to base url 'https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_alert'.</msg>
+<status status="PASS" starttime="20230418 19:28:19.007" endtime="20230418 19:28:22.965"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230417 18:19:41.522" endtime="20230417 18:19:41.677"/>
+<status status="PASS" starttime="20230418 19:28:22.965" endtime="20230418 19:28:23.166"/>
 </kw>
-<status status="PASS" starttime="20230417 18:19:37.178" endtime="20230417 18:19:41.678"/>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>id:iframeResult</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20230418 19:28:23.168" level="INFO">Selecting frame 'id:iframeResult'.</msg>
+<status status="PASS" starttime="20230418 19:28:23.167" endtime="20230418 19:28:23.456"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:gh-ac</arg>
-<arg>robot</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230417 18:19:41.683" level="INFO">Typing text 'robot' into text field 'id:gh-ac'.</msg>
-<status status="PASS" starttime="20230417 18:19:41.680" endtime="20230417 18:19:41.938"/>
+<kw name="Current Frame Should Contain" library="SeleniumLibrary">
+<arg>The Window Object</arg>
+<doc>Verifies that the current frame contains ``text``.</doc>
+<msg timestamp="20230418 19:28:23.482" level="INFO">Current frame contains text 'The Window Object'.</msg>
+<status status="PASS" starttime="20230418 19:28:23.458" endtime="20230418 19:28:23.483"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230417 18:19:42.945" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230417 18:19:41.939" endtime="20230417 18:19:42.945"/>
+<kw name="Current Frame Should Not Contain" library="SeleniumLibrary">
+<arg>The JavaScript Object</arg>
+<doc>Verifies that the current frame does not contain ``text``.</doc>
+<msg timestamp="20230418 19:28:23.507" level="INFO">Current frame did not contain text 'The JavaScript Object'.</msg>
+<status status="PASS" starttime="20230418 19:28:23.483" endtime="20230418 19:28:23.508"/>
 </kw>
-<kw name="Finish TestCase">
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20230418 19:28:23.509" endtime="20230418 19:28:23.516"/>
+</kw>
+<kw name="Frame Should Contain" library="SeleniumLibrary">
+<arg>id:iframeResult</arg>
+<arg>The Window Object</arg>
+<doc>Verifies that frame identified by ``locator`` contains ``text``.</doc>
+<msg timestamp="20230418 19:28:23.550" level="INFO">Searching for text from frame 'id:iframeResult'.</msg>
+<msg timestamp="20230418 19:28:23.565" level="INFO">Frame 'id:iframeResult' contains text 'The Window Object'.</msg>
+<status status="PASS" starttime="20230418 19:28:23.516" endtime="20230418 19:28:23.565"/>
+</kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230417 18:19:42.947" endtime="20230417 18:19:45.272"/>
+<status status="PASS" starttime="20230418 19:28:23.565" endtime="20230418 19:28:25.991"/>
 </kw>
-<status status="PASS" starttime="20230417 18:19:42.946" endtime="20230417 18:19:45.273"/>
-</kw>
-<doc>This test case verifies the basic search</doc>
-<tag>Functional</tag>
-<status status="PASS" starttime="20230417 18:19:37.177" endtime="20230417 18:19:45.274"/>
+<doc>Google test</doc>
+<tag>regression</tag>
+<status status="PASS" starttime="20230418 19:28:19.006" endtime="20230418 19:28:25.992"/>
 </test>
-<doc>Basic Search Functionality</doc>
-<status status="PASS" starttime="20230417 18:19:36.715" endtime="20230417 18:19:45.277"/>
+<status status="PASS" starttime="20230418 19:28:18.655" endtime="20230418 19:28:25.995"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Functional</stat>
+<stat pass="1" fail="0" skip="0">regression</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="BasicSearch">BasicSearch</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="iFrame">iFrame</stat>
 </suite>
 </statistics>
 <errors>

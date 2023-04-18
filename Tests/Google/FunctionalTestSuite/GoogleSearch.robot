@@ -11,5 +11,5 @@ This is a sample test case
     [Documentation]    Google test
     [Tags]    regression
 
-    Open Browser    https://www.google.com    Chrome    executable_path = ${EXECUTABLE PATH}
+    Open Browser    https://www.google.com    Chrome
     Close Browser
