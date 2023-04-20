@@ -1,242 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.8.10 on win32)" generated="20230419 17:08:47.357" rpa="false" schemaversion="3">
-<suite id="s1" name="Dropdown List" source="D:\Python\robot_frameworks\Tests\Google\FunctionalTestSuite\Dropdown_List.robot">
-<test id="s1-t1" name="This is a sample test case" line="12">
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230420 18:13:18.447" rpa="false" schemaversion="3">
+<suite id="s1" name="IfElse demo" source="D:\Code Files\Python\RobotFramworkTute\Tests\Google\FunctionalTestSuite\IfElse_demo.robot">
+<test id="s1-t1" name="This is a sample test case" line="11">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_select</arg>
-<arg>Chrome</arg>
-<arg>alias=ChromeRCV</arg>
+<arg>https://www.saucedemo.com/</arg>
+<arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230419 17:08:47.601" level="INFO">Opening browser 'Chrome' to base url 'https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_select'.</msg>
-<status status="PASS" starttime="20230419 17:08:47.600" endtime="20230419 17:09:08.265"/>
+<msg timestamp="20230420 18:13:18.827" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230420 18:13:18.827" endtime="20230420 18:13:21.205"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230419 17:09:08.266" endtime="20230419 17:09:08.388"/>
+<status status="PASS" starttime="20230420 18:13:21.205" endtime="20230420 18:13:21.363"/>
 </kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>id:iframeResult</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230419 17:09:08.389" level="INFO">Selecting frame 'id:iframeResult'.</msg>
-<status status="PASS" starttime="20230419 17:09:08.389" endtime="20230419 17:09:08.434"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:user-name</arg>
+<arg>standard_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230420 18:13:21.364" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<status status="PASS" starttime="20230420 18:13:21.363" endtime="20230420 18:13:21.561"/>
 </kw>
-<kw name="Page Should Contain List" library="SeleniumLibrary">
-<arg>${select_xpath}</arg>
-<doc>Verifies selection list ``locator`` is found from current page.</doc>
-<msg timestamp="20230419 17:09:08.481" level="INFO">Current page contains list '//*[@id="cars"]'.</msg>
-<status status="PASS" starttime="20230419 17:09:08.435" endtime="20230419 17:09:08.481"/>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>secret_sauce</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230420 18:13:21.562" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20230420 18:13:21.615" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230420 18:13:21.697" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230420 18:13:21.561" endtime="20230420 18:13:21.697"/>
 </kw>
-<kw name="Page Should Not Contain List" library="SeleniumLibrary">
-<arg>xpath://*[@id="how-select2"]</arg>
-<doc>Verifies selection list ``locator`` is not found from current page.</doc>
-<msg timestamp="20230419 17:09:08.504" level="INFO">Current page does not contain list 'xpath://*[@id="how-select2"]'.</msg>
-<status status="PASS" starttime="20230419 17:09:08.483" endtime="20230419 17:09:08.504"/>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://*[@id="login-button"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230420 18:13:21.700" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230420 18:13:21.698" endtime="20230420 18:13:21.860"/>
 </kw>
-<kw name="Get List Items" library="SeleniumLibrary">
-<var>@{AllItems}</var>
-<arg>${select_xpath}</arg>
-<doc>Returns all labels or values of selection list ``locator``.</doc>
-<msg timestamp="20230419 17:09:08.652" level="INFO">@{AllItems} = [ Volvo | Saab | Opel | Audi ]</msg>
-<status status="PASS" starttime="20230419 17:09:08.504" endtime="20230419 17:09:08.652"/>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${items_on_page}</var>
+<arg>//*[@id="inventory_container"]/div/div[1]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20230420 18:13:21.911" level="INFO">${items_on_page} = 2</msg>
+<status status="PASS" starttime="20230420 18:13:21.865" endtime="20230420 18:13:21.911"/>
 </kw>
-<kw name="Get Selected List Label" library="SeleniumLibrary">
-<var>${ListLabel}</var>
-<arg>${select_xpath}</arg>
-<doc>Returns the label of selected option from selection list ``locator``.</doc>
-<msg timestamp="20230419 17:09:08.763" level="INFO">${ListLabel} = Volvo</msg>
-<status status="PASS" starttime="20230419 17:09:08.652" endtime="20230419 17:09:08.763"/>
-</kw>
-<kw name="Get Selected List Value" library="SeleniumLibrary">
-<var>${ListValue}</var>
-<arg>${select_xpath}</arg>
-<doc>Returns the value of selected option from selection list ``locator``.</doc>
-<msg timestamp="20230419 17:09:08.823" level="INFO">${ListValue} = volvo</msg>
-<status status="PASS" starttime="20230419 17:09:08.764" endtime="20230419 17:09:08.823"/>
-</kw>
-<kw name="List Selection Should Be" library="SeleniumLibrary">
-<arg>${select_xpath}</arg>
-<arg>Volvo</arg>
-<doc>Verifies selection list ``locator`` has ``expected`` options selected.</doc>
-<msg timestamp="20230419 17:09:08.826" level="INFO">Verifying list '//*[@id="cars"]' has option [ Volvo ] selected.</msg>
-<msg timestamp="20230419 17:09:08.839" level="INFO">Current page contains list '//*[@id="cars"]'.</msg>
-<status status="PASS" starttime="20230419 17:09:08.824" endtime="20230419 17:09:08.943"/>
-</kw>
-<kw name="Select From List By Index" library="SeleniumLibrary">
-<arg>${select_xpath}</arg>
-<arg>1</arg>
-<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
-<msg timestamp="20230419 17:09:08.945" level="INFO">Selecting options from selection list '//*[@id="cars"]' by index 1.</msg>
-<status status="PASS" starttime="20230419 17:09:08.944" endtime="20230419 17:09:09.038"/>
-</kw>
-<kw name="Get Selected List Label" library="SeleniumLibrary">
-<var>${ListLabel1}</var>
-<arg>${select_xpath}</arg>
-<doc>Returns the label of selected option from selection list ``locator``.</doc>
-<msg timestamp="20230419 17:09:09.088" level="INFO">${ListLabel1} = Saab</msg>
-<status status="PASS" starttime="20230419 17:09:09.039" endtime="20230419 17:09:09.088"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230419 17:09:10.089" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230419 17:09:09.089" endtime="20230419 17:09:10.089"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>${select_xpath}</arg>
-<arg>Audi</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230419 17:09:10.091" level="INFO">Selecting options from selection list '//*[@id="cars"]' by label Audi.</msg>
-<status status="PASS" starttime="20230419 17:09:10.090" endtime="20230419 17:09:10.174"/>
-</kw>
-<kw name="Get Selected List Label" library="SeleniumLibrary">
-<var>${ListLabel2}</var>
-<arg>${select_xpath}</arg>
-<doc>Returns the label of selected option from selection list ``locator``.</doc>
-<msg timestamp="20230419 17:09:10.244" level="INFO">${ListLabel2} = Audi</msg>
-<status status="PASS" starttime="20230419 17:09:10.175" endtime="20230419 17:09:10.244"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230419 17:09:11.253" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230419 17:09:10.245" endtime="20230419 17:09:11.253"/>
-</kw>
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<arg>${select_xpath}</arg>
-<arg>opel</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20230419 17:09:11.254" level="INFO">Selecting options from selection list '//*[@id="cars"]' by value opel.</msg>
-<status status="PASS" starttime="20230419 17:09:11.254" endtime="20230419 17:09:11.340"/>
-</kw>
-<kw name="Get Selected List Label" library="SeleniumLibrary">
-<var>${ListLabel3}</var>
-<arg>${select_xpath}</arg>
-<doc>Returns the label of selected option from selection list ``locator``.</doc>
-<msg timestamp="20230419 17:09:11.404" level="INFO">${ListLabel3} = Opel</msg>
-<status status="PASS" starttime="20230419 17:09:11.341" endtime="20230419 17:09:11.404"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230419 17:09:12.411" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230419 17:09:11.406" endtime="20230419 17:09:12.411"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_select_multiple</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230419 17:09:12.412" level="INFO">Opening url 'https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_select_multiple'</msg>
-<status status="PASS" starttime="20230419 17:09:12.411" endtime="20230419 17:09:13.081"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>id:iframeResult</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230419 17:09:13.082" level="INFO">Selecting frame 'id:iframeResult'.</msg>
-<status status="PASS" starttime="20230419 17:09:13.082" endtime="20230419 17:09:13.119"/>
-</kw>
-<kw name="Select All From List" library="SeleniumLibrary">
-<arg>xpath://*[@id="cars"]</arg>
-<doc>Selects all options from multi-selection list ``locator``.</doc>
-<msg timestamp="20230419 17:09:13.121" level="INFO">Selecting all options from list 'xpath://*[@id="cars"]'.</msg>
-<status status="PASS" starttime="20230419 17:09:13.120" endtime="20230419 17:09:13.570"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230419 17:09:14.580" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230419 17:09:13.571" endtime="20230419 17:09:14.580"/>
-</kw>
-<kw name="Get Selected List Labels" library="SeleniumLibrary">
-<var>@{ListLabels}</var>
-<arg>xpath://*[@id="cars"]</arg>
-<doc>Returns labels of selected options from selection list ``locator``.</doc>
-<msg timestamp="20230419 17:09:14.799" level="INFO">@{ListLabels} = [ Volvo | Saab | Opel | Audi ]</msg>
-<status status="PASS" starttime="20230419 17:09:14.581" endtime="20230419 17:09:14.799"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230419 17:09:15.812" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230419 17:09:14.800" endtime="20230419 17:09:15.812"/>
-</kw>
-<kw name="Unselect From List By Value" library="SeleniumLibrary">
-<arg>xpath://*[@id="cars"]</arg>
-<arg>audi</arg>
-<doc>Unselects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20230419 17:09:15.813" level="INFO">Un-selecting options from selection list 'xpath://*[@id="cars"]' by value audi.</msg>
-<status status="PASS" starttime="20230419 17:09:15.813" endtime="20230419 17:09:15.883"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230419 17:09:16.892" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230419 17:09:15.884" endtime="20230419 17:09:16.892"/>
-</kw>
-<kw name="Unselect From List By Index" library="SeleniumLibrary">
-<arg>xpath://*[@id="cars"]</arg>
-<arg>1</arg>
-<doc>Unselects options from selection list ``locator`` by ``indexes``.</doc>
-<msg timestamp="20230419 17:09:16.894" level="INFO">Un-selecting options from selection list 'xpath://*[@id="cars"]' by index 1.</msg>
-<status status="PASS" starttime="20230419 17:09:16.893" endtime="20230419 17:09:16.983"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230419 17:09:17.985" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230419 17:09:16.984" endtime="20230419 17:09:17.985"/>
-</kw>
-<kw name="Unselect From List By Label" library="SeleniumLibrary">
-<arg>xpath://*[@id="cars"]</arg>
-<arg>Volvo</arg>
-<doc>Unselects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230419 17:09:17.987" level="INFO">Un-selecting options from selection list 'xpath://*[@id="cars"]' by label Volvo.</msg>
-<status status="PASS" starttime="20230419 17:09:17.986" endtime="20230419 17:09:18.064"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230419 17:09:19.074" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230419 17:09:18.064" endtime="20230419 17:09:19.074"/>
-</kw>
-<kw name="Get Selected List Values" library="SeleniumLibrary">
-<var>@{ListValues}</var>
-<arg>xpath://*[@id="cars"]</arg>
-<doc>Returns values of selected options from selection list ``locator``.</doc>
-<msg timestamp="20230419 17:09:19.151" level="INFO">@{ListValues} = [ opel ]</msg>
-<status status="PASS" starttime="20230419 17:09:19.075" endtime="20230419 17:09:19.151"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230419 17:09:20.158" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230419 17:09:19.151" endtime="20230419 17:09:20.158"/>
-</kw>
-<kw name="Unselect All From List" library="SeleniumLibrary">
-<arg>xpath://*[@id="cars"]</arg>
-<doc>Unselects all options from multi-selection list ``locator``.</doc>
-<msg timestamp="20230419 17:09:20.159" level="INFO">Unselecting all options from list 'xpath://*[@id="cars"]'.</msg>
-<status status="PASS" starttime="20230419 17:09:20.159" endtime="20230419 17:09:20.247"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230419 17:09:21.254" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230419 17:09:20.249" endtime="20230419 17:09:21.254"/>
-</kw>
-<kw name="List Should Have No Selections" library="SeleniumLibrary">
-<arg>xpath://*[@id="cars"]</arg>
-<doc>Verifies selection list ``locator`` has no options selected.</doc>
-<msg timestamp="20230419 17:09:21.255" level="INFO">Verifying list 'xpath://*[@id="cars"]' has no selections.</msg>
-<status status="PASS" starttime="20230419 17:09:21.255" endtime="20230419 17:09:21.321"/>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${items_on_page} == 10</arg>
+<arg>Test Keyword 1</arg>
+<arg>ELSE IF</arg>
+<arg>${items_on_page} &lt; 10 and ${items_on_page} &gt; 6</arg>
+<arg>Test Keyword 2</arg>
+<arg>ELSE</arg>
+<arg>Test Keyword 3</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Test Keyword 3">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Execute Keyword3 - Found no Items</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230420 18:13:21.915" endtime="20230420 18:13:21.919"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230419 17:09:21.322" endtime="20230419 17:09:23.832"/>
+<status status="PASS" starttime="20230420 18:13:21.920" endtime="20230420 18:13:24.194"/>
 </kw>
-<doc>Google test</doc>
+<status status="PASS" starttime="20230420 18:13:21.914" endtime="20230420 18:13:24.194"/>
+</kw>
+<status status="PASS" starttime="20230420 18:13:21.913" endtime="20230420 18:13:24.194"/>
+</kw>
+<doc>If Else in robot framework</doc>
 <tag>regression</tag>
-<status status="PASS" starttime="20230419 17:08:47.600" endtime="20230419 17:09:23.833"/>
+<status status="PASS" starttime="20230420 18:13:18.826" endtime="20230420 18:13:24.194"/>
 </test>
-<status status="PASS" starttime="20230419 17:08:47.359" endtime="20230419 17:09:23.835"/>
+<status status="PASS" starttime="20230420 18:13:18.447" endtime="20230420 18:13:24.205"/>
 </suite>
 <statistics>
 <total>
@@ -246,7 +79,7 @@
 <stat pass="1" fail="0" skip="0">regression</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Dropdown List">Dropdown List</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="IfElse demo">IfElse demo</stat>
 </suite>
 </statistics>
 <errors>

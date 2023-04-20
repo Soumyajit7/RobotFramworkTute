@@ -11,7 +11,7 @@ ${select_xpath}  //*[@id="cars"]
 
 *** Test Cases ***
 This is a sample test case
-    [Documentation]    Google test
+    [Documentation]    Dropdown Handle Test
     [Tags]    regression
 
     Open Browser    https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_select    ${browser}  alias=ChromeRCV
