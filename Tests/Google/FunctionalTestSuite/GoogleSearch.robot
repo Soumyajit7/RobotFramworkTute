@@ -13,3 +13,5 @@ This is a sample test case
 
     Open Browser    https://www.google.com    Chrome
     Close Browser
+
+*** Keywords ***
