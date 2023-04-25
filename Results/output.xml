@@ -1,111 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230421 16:53:24.465" rpa="false" schemaversion="3">
-<suite id="s1" name="DataDriven builtin" source="D:\Code Files\Python\RobotFramworkTute\Tests\Google\FunctionalTestSuite\DataDriven_builtin.robot">
+<robot generator="Rebot 6.0.2 (Python 3.11.3 on win32)" generated="20230425 18:17:55.526" rpa="false" schemaversion="3">
+<suite id="s1" name="Suites">
+<suite id="s1-s1" name="DataDriven CSV" source="D:\Code Files\Python\RobotFramworkTute\Tests\Google\FunctionalTestSuite\DataDriven_CSV.robot">
 <kw name="Start TestCase" library="Common_Datadriven" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230421 16:53:24.988" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
-<status status="PASS" starttime="20230421 16:53:24.988" endtime="20230421 16:53:27.425"/>
+<msg timestamp="20230425 18:17:29.983" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230425 18:17:29.983" endtime="20230425 18:17:32.992"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230421 16:53:27.426" endtime="20230421 16:53:27.549"/>
+<status status="PASS" starttime="20230425 18:17:32.993" endtime="20230425 18:17:33.171"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230421 16:53:28.550" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230421 16:53:27.549" endtime="20230421 16:53:28.550"/>
+<msg timestamp="20230425 18:17:34.173" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230425 18:17:33.171" endtime="20230425 18:17:34.173"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:24.987" endtime="20230421 16:53:28.552"/>
+<status status="PASS" starttime="20230425 18:17:29.983" endtime="20230425 18:17:34.173"/>
 </kw>
-<test id="s1-t1" name="Verify Login fails - Blank Username and Password" line="10">
+<test id="s1-s1-t1" name="Verify Login Fails with Invalid Creds" line="12">
 <kw name="Invalid Login Scenarios">
-<arg>${EMPTY}</arg>
-<arg>${EMPTY}</arg>
 <arg>Epic sadface: Username is required</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txtbox_username}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:28.560" level="INFO">Typing text '' into text field 'id:user-name'.</msg>
-<status status="PASS" starttime="20230421 16:53:28.560" endtime="20230421 16:53:28.772"/>
+<msg timestamp="20230425 18:17:34.178" level="INFO">Typing text '' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:34.177" endtime="20230425 18:17:34.282"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txtbox_password}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:28.772" level="INFO">Typing text '' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20230421 16:53:28.772" endtime="20230421 16:53:28.903"/>
+<msg timestamp="20230425 18:17:34.283" level="INFO">Typing text '' into text field 'xpath://*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:34.282" endtime="20230425 18:17:34.371"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${btn_login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:28.903" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
-<status status="PASS" starttime="20230421 16:53:28.903" endtime="20230421 16:53:28.999"/>
+<msg timestamp="20230425 18:17:34.373" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:34.372" endtime="20230425 18:17:34.452"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
+<arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230421 16:53:30.999" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230421 16:53:28.999" endtime="20230421 16:53:30.999"/>
+<msg timestamp="20230425 18:17:35.454" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230425 18:17:34.452" endtime="20230425 18:17:35.454"/>
 </kw>
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>${txt_error}</arg>
 <arg>${error_msg}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20230421 16:53:31.030" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Username is required'.</msg>
-<status status="PASS" starttime="20230421 16:53:30.999" endtime="20230421 16:53:31.030"/>
+<msg timestamp="20230425 18:17:35.485" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Username is required'.</msg>
+<status status="PASS" starttime="20230425 18:17:35.454" endtime="20230425 18:17:35.485"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:28.555" endtime="20230421 16:53:31.030"/>
+<status status="PASS" starttime="20230425 18:17:34.176" endtime="20230425 18:17:35.485"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:28.552" endtime="20230421 16:53:31.032"/>
+<status status="PASS" starttime="20230425 18:17:34.174" endtime="20230425 18:17:35.485"/>
 </test>
-<test id="s1-t2" name="Verify Login fails - Blank Password" line="11">
+<test id="s1-s1-t2" name="Verify Login Fails with Invalid Creds" line="12">
 <kw name="Invalid Login Scenarios">
 <arg>standard_user</arg>
-<arg>${EMPTY}</arg>
 <arg>Epic sadface: Password is required</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txtbox_username}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:31.037" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
-<status status="PASS" starttime="20230421 16:53:31.036" endtime="20230421 16:53:31.152"/>
+<msg timestamp="20230425 18:17:35.491" level="INFO">Typing text 'standard_user' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:35.490" endtime="20230425 18:17:35.607"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txtbox_password}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:31.153" level="INFO">Typing text '' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20230421 16:53:31.152" endtime="20230421 16:53:31.211"/>
+<msg timestamp="20230425 18:17:35.608" level="INFO">Typing text '' into text field 'xpath://*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:35.607" endtime="20230425 18:17:35.661"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${btn_login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:31.213" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
-<status status="PASS" starttime="20230421 16:53:31.211" endtime="20230421 16:53:31.253"/>
+<msg timestamp="20230425 18:17:35.664" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:35.661" endtime="20230425 18:17:35.702"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
+<arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230421 16:53:33.255" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230421 16:53:31.253" endtime="20230421 16:53:33.255"/>
+<msg timestamp="20230425 18:17:36.703" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230425 18:17:35.702" endtime="20230425 18:17:36.703"/>
 </kw>
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>${txt_error}</arg>
 <arg>${error_msg}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20230421 16:53:33.273" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Password is required'.</msg>
-<status status="PASS" starttime="20230421 16:53:33.255" endtime="20230421 16:53:33.273"/>
+<msg timestamp="20230425 18:17:36.724" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Password is required'.</msg>
+<status status="PASS" starttime="20230425 18:17:36.703" endtime="20230425 18:17:36.724"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:31.035" endtime="20230421 16:53:33.273"/>
+<status status="PASS" starttime="20230425 18:17:35.489" endtime="20230425 18:17:36.724"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:31.034" endtime="20230421 16:53:33.273"/>
+<status status="PASS" starttime="20230425 18:17:35.487" endtime="20230425 18:17:36.727"/>
 </test>
-<test id="s1-t3" name="Verify Login fails - Wrong Username and Password" line="12">
+<test id="s1-s1-t3" name="Verify Login Fails with Invalid Creds" line="12">
 <kw name="Invalid Login Scenarios">
 <arg>standard_use</arg>
 <arg>secret_sa</arg>
@@ -114,40 +112,40 @@
 <arg>${txtbox_username}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:33.279" level="INFO">Typing text 'standard_use' into text field 'id:user-name'.</msg>
-<status status="PASS" starttime="20230421 16:53:33.278" endtime="20230421 16:53:33.405"/>
+<msg timestamp="20230425 18:17:36.731" level="INFO">Typing text 'standard_use' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:36.730" endtime="20230425 18:17:36.857"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txtbox_password}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:33.405" level="INFO">Typing text 'secret_sa' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20230421 16:53:33.405" endtime="20230421 16:53:33.495"/>
+<msg timestamp="20230425 18:17:36.858" level="INFO">Typing text 'secret_sa' into text field 'xpath://*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:36.857" endtime="20230425 18:17:36.970"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${btn_login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:33.496" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
-<status status="PASS" starttime="20230421 16:53:33.496" endtime="20230421 16:53:33.538"/>
+<msg timestamp="20230425 18:17:36.971" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:36.970" endtime="20230425 18:17:37.033"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
+<arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230421 16:53:35.540" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230421 16:53:33.539" endtime="20230421 16:53:35.540"/>
+<msg timestamp="20230425 18:17:38.033" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230425 18:17:37.033" endtime="20230425 18:17:38.033"/>
 </kw>
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>${txt_error}</arg>
 <arg>${error_msg}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20230421 16:53:35.591" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
-<status status="PASS" starttime="20230421 16:53:35.540" endtime="20230421 16:53:35.591"/>
+<msg timestamp="20230425 18:17:38.048" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<status status="PASS" starttime="20230425 18:17:38.033" endtime="20230425 18:17:38.048"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:33.277" endtime="20230421 16:53:35.591"/>
+<status status="PASS" starttime="20230425 18:17:36.729" endtime="20230425 18:17:38.048"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:33.276" endtime="20230421 16:53:35.591"/>
+<status status="PASS" starttime="20230425 18:17:36.727" endtime="20230425 18:17:38.048"/>
 </test>
-<test id="s1-t4" name="Verify Login fails - Wrong Password" line="13">
+<test id="s1-s1-t4" name="Verify Login Fails with Invalid Creds" line="12">
 <kw name="Invalid Login Scenarios">
 <arg>standard_user</arg>
 <arg>secret_sa</arg>
@@ -156,40 +154,40 @@
 <arg>${txtbox_username}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:35.606" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
-<status status="PASS" starttime="20230421 16:53:35.596" endtime="20230421 16:53:35.820"/>
+<msg timestamp="20230425 18:17:38.053" level="INFO">Typing text 'standard_user' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:38.053" endtime="20230425 18:17:38.157"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txtbox_password}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:35.821" level="INFO">Typing text 'secret_sa' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20230421 16:53:35.820" endtime="20230421 16:53:35.922"/>
+<msg timestamp="20230425 18:17:38.157" level="INFO">Typing text 'secret_sa' into text field 'xpath://*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:38.157" endtime="20230425 18:17:38.238"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${btn_login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:35.923" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
-<status status="PASS" starttime="20230421 16:53:35.922" endtime="20230421 16:53:35.966"/>
+<msg timestamp="20230425 18:17:38.238" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:38.238" endtime="20230425 18:17:38.279"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
+<arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230421 16:53:37.967" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230421 16:53:35.966" endtime="20230421 16:53:37.967"/>
+<msg timestamp="20230425 18:17:39.284" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230425 18:17:38.280" endtime="20230425 18:17:39.284"/>
 </kw>
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>${txt_error}</arg>
 <arg>${error_msg}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20230421 16:53:38.015" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
-<status status="PASS" starttime="20230421 16:53:37.967" endtime="20230421 16:53:38.015"/>
+<msg timestamp="20230425 18:17:39.302" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<status status="PASS" starttime="20230425 18:17:39.284" endtime="20230425 18:17:39.302"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:35.596" endtime="20230421 16:53:38.015"/>
+<status status="PASS" starttime="20230425 18:17:38.048" endtime="20230425 18:17:39.302"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:35.596" endtime="20230421 16:53:38.015"/>
+<status status="PASS" starttime="20230425 18:17:38.048" endtime="20230425 18:17:39.302"/>
 </test>
-<test id="s1-t5" name="Verify Login fails - LockedOut User" line="14">
+<test id="s1-s1-t5" name="Verify Login Fails with Invalid Creds" line="12">
 <kw name="Invalid Login Scenarios">
 <arg>locked_out_user</arg>
 <arg>secret_sauce</arg>
@@ -198,40 +196,40 @@
 <arg>${txtbox_username}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:38.031" level="INFO">Typing text 'locked_out_user' into text field 'id:user-name'.</msg>
-<status status="PASS" starttime="20230421 16:53:38.023" endtime="20230421 16:53:38.294"/>
+<msg timestamp="20230425 18:17:39.309" level="INFO">Typing text 'locked_out_user' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:39.304" endtime="20230425 18:17:39.491"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txtbox_password}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:38.294" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20230421 16:53:38.294" endtime="20230421 16:53:38.438"/>
+<msg timestamp="20230425 18:17:39.492" level="INFO">Typing text 'secret_sauce' into text field 'xpath://*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:39.491" endtime="20230425 18:17:39.644"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${btn_login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:38.439" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
-<status status="PASS" starttime="20230421 16:53:38.438" endtime="20230421 16:53:38.503"/>
+<msg timestamp="20230425 18:17:39.647" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:39.646" endtime="20230425 18:17:39.700"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
+<arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230421 16:53:40.504" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230421 16:53:38.503" endtime="20230421 16:53:40.504"/>
+<msg timestamp="20230425 18:17:40.702" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230425 18:17:39.701" endtime="20230425 18:17:40.702"/>
 </kw>
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>${txt_error}</arg>
 <arg>${error_msg}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20230421 16:53:40.530" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Sorry, this user has been locked out.'.</msg>
-<status status="PASS" starttime="20230421 16:53:40.504" endtime="20230421 16:53:40.530"/>
+<msg timestamp="20230425 18:17:40.717" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Sorry, this user has been locked out.'.</msg>
+<status status="PASS" starttime="20230425 18:17:40.702" endtime="20230425 18:17:40.717"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:38.023" endtime="20230421 16:53:40.530"/>
+<status status="PASS" starttime="20230425 18:17:39.304" endtime="20230425 18:17:40.717"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:38.023" endtime="20230421 16:53:40.531"/>
+<status status="PASS" starttime="20230425 18:17:39.304" endtime="20230425 18:17:40.717"/>
 </test>
-<test id="s1-t6" name="Verify Login fails - Wrong Username" line="15">
+<test id="s1-s1-t6" name="Verify Login Fails with Invalid Creds" line="12">
 <kw name="Invalid Login Scenarios">
 <arg>standard_us</arg>
 <arg>secret_sauce</arg>
@@ -240,58 +238,350 @@
 <arg>${txtbox_username}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:40.541" level="INFO">Typing text 'standard_us' into text field 'id:user-name'.</msg>
-<status status="PASS" starttime="20230421 16:53:40.540" endtime="20230421 16:53:40.695"/>
+<msg timestamp="20230425 18:17:40.717" level="INFO">Typing text 'standard_us' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:40.717" endtime="20230425 18:17:40.825"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txtbox_password}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:40.696" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20230421 16:53:40.696" endtime="20230421 16:53:40.842"/>
+<msg timestamp="20230425 18:17:40.825" level="INFO">Typing text 'secret_sauce' into text field 'xpath://*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:40.825" endtime="20230425 18:17:40.930"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${btn_login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230421 16:53:40.843" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
-<status status="PASS" starttime="20230421 16:53:40.842" endtime="20230421 16:53:40.903"/>
+<msg timestamp="20230425 18:17:40.934" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:40.930" endtime="20230425 18:17:40.983"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
+<arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230421 16:53:42.904" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230421 16:53:40.903" endtime="20230421 16:53:42.904"/>
+<msg timestamp="20230425 18:17:41.987" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230425 18:17:40.983" endtime="20230425 18:17:41.987"/>
 </kw>
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>${txt_error}</arg>
 <arg>${error_msg}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20230421 16:53:42.925" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
-<status status="PASS" starttime="20230421 16:53:42.904" endtime="20230421 16:53:42.926"/>
+<msg timestamp="20230425 18:17:42.006" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<status status="PASS" starttime="20230425 18:17:41.987" endtime="20230425 18:17:42.006"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:40.539" endtime="20230421 16:53:42.926"/>
+<status status="PASS" starttime="20230425 18:17:40.717" endtime="20230425 18:17:42.006"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:40.537" endtime="20230421 16:53:42.927"/>
+<status status="PASS" starttime="20230425 18:17:40.717" endtime="20230425 18:17:42.006"/>
 </test>
 <kw name="Finish Testcase" library="Common_Datadriven" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230421 16:53:42.930" endtime="20230421 16:53:45.231"/>
+<status status="PASS" starttime="20230425 18:17:42.006" endtime="20230425 18:17:44.190"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:42.930" endtime="20230421 16:53:45.231"/>
+<status status="PASS" starttime="20230425 18:17:42.006" endtime="20230425 18:17:44.190"/>
 </kw>
-<status status="PASS" starttime="20230421 16:53:24.471" endtime="20230421 16:53:45.231"/>
+<status status="PASS" starttime="20230425 18:17:29.539" endtime="20230425 18:17:44.190"/>
+</suite>
+<suite id="s1-s2" name="DataDriven builtin" source="D:\Code Files\Python\RobotFramworkTute\Tests\Google\FunctionalTestSuite\DataDriven_builtin.robot">
+<kw name="Start TestCase" library="Common_Datadriven" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230425 18:17:29.953" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230425 18:17:29.953" endtime="20230425 18:17:33.548"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230425 18:17:33.549" endtime="20230425 18:17:33.699"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230425 18:17:34.704" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230425 18:17:33.700" endtime="20230425 18:17:34.704"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:29.953" endtime="20230425 18:17:34.704"/>
+</kw>
+<test id="s1-s2-t1" name="Verify Login fails - Blank Username and Password" line="10">
+<kw name="Invalid Login Scenarios">
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>Epic sadface: Username is required</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtbox_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:34.707" level="INFO">Typing text '' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:34.707" endtime="20230425 18:17:34.792"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtbox_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:34.797" level="INFO">Typing text '' into text field 'xpath://*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:34.792" endtime="20230425 18:17:34.886"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:34.888" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:34.886" endtime="20230425 18:17:34.959"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230425 18:17:36.961" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230425 18:17:34.960" endtime="20230425 18:17:36.961"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${txt_error}</arg>
+<arg>${error_msg}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230425 18:17:37.013" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Username is required'.</msg>
+<status status="PASS" starttime="20230425 18:17:36.961" endtime="20230425 18:17:37.013"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:34.705" endtime="20230425 18:17:37.014"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:34.705" endtime="20230425 18:17:37.014"/>
+</test>
+<test id="s1-s2-t2" name="Verify Login fails - Blank Password" line="11">
+<kw name="Invalid Login Scenarios">
+<arg>standard_user</arg>
+<arg>${EMPTY}</arg>
+<arg>Epic sadface: Password is required</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtbox_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:37.015" level="INFO">Typing text 'standard_user' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:37.015" endtime="20230425 18:17:37.139"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtbox_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:37.141" level="INFO">Typing text '' into text field 'xpath://*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:37.140" endtime="20230425 18:17:37.218"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:37.220" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:37.218" endtime="20230425 18:17:37.289"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230425 18:17:39.294" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230425 18:17:37.289" endtime="20230425 18:17:39.294"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${txt_error}</arg>
+<arg>${error_msg}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230425 18:17:39.314" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Password is required'.</msg>
+<status status="PASS" starttime="20230425 18:17:39.294" endtime="20230425 18:17:39.314"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:37.015" endtime="20230425 18:17:39.314"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:37.015" endtime="20230425 18:17:39.314"/>
+</test>
+<test id="s1-s2-t3" name="Verify Login fails - Wrong Username and Password" line="12">
+<kw name="Invalid Login Scenarios">
+<arg>standard_use</arg>
+<arg>secret_sa</arg>
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtbox_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:39.319" level="INFO">Typing text 'standard_use' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:39.314" endtime="20230425 18:17:39.460"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtbox_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:39.462" level="INFO">Typing text 'secret_sa' into text field 'xpath://*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:39.461" endtime="20230425 18:17:39.585"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:39.587" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:39.586" endtime="20230425 18:17:39.657"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230425 18:17:41.659" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230425 18:17:39.658" endtime="20230425 18:17:41.659"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${txt_error}</arg>
+<arg>${error_msg}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230425 18:17:41.679" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<status status="PASS" starttime="20230425 18:17:41.659" endtime="20230425 18:17:41.679"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:39.314" endtime="20230425 18:17:41.679"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:39.314" endtime="20230425 18:17:41.679"/>
+</test>
+<test id="s1-s2-t4" name="Verify Login fails - Wrong Password" line="13">
+<kw name="Invalid Login Scenarios">
+<arg>standard_user</arg>
+<arg>secret_sa</arg>
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtbox_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:41.679" level="INFO">Typing text 'standard_user' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:41.679" endtime="20230425 18:17:41.800"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtbox_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:41.800" level="INFO">Typing text 'secret_sa' into text field 'xpath://*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:41.800" endtime="20230425 18:17:41.908"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:41.908" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:41.908" endtime="20230425 18:17:41.954"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230425 18:17:43.954" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230425 18:17:41.954" endtime="20230425 18:17:43.954"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${txt_error}</arg>
+<arg>${error_msg}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230425 18:17:44.006" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<status status="PASS" starttime="20230425 18:17:43.954" endtime="20230425 18:17:44.006"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:41.679" endtime="20230425 18:17:44.006"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:41.679" endtime="20230425 18:17:44.006"/>
+</test>
+<test id="s1-s2-t5" name="Verify Login fails - LockedOut User" line="14">
+<kw name="Invalid Login Scenarios">
+<arg>locked_out_user</arg>
+<arg>secret_sauce</arg>
+<arg>Epic sadface: Sorry, this user has been locked out.</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtbox_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:44.011" level="INFO">Typing text 'locked_out_user' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:44.011" endtime="20230425 18:17:44.126"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtbox_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:44.126" level="INFO">Typing text 'secret_sauce' into text field 'xpath://*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:44.126" endtime="20230425 18:17:44.228"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:44.228" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:44.228" endtime="20230425 18:17:44.267"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230425 18:17:46.269" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230425 18:17:44.267" endtime="20230425 18:17:46.269"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${txt_error}</arg>
+<arg>${error_msg}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230425 18:17:46.318" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Sorry, this user has been locked out.'.</msg>
+<status status="PASS" starttime="20230425 18:17:46.269" endtime="20230425 18:17:46.318"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:44.006" endtime="20230425 18:17:46.318"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:44.006" endtime="20230425 18:17:46.318"/>
+</test>
+<test id="s1-s2-t6" name="Verify Login fails - Wrong Username" line="15">
+<kw name="Invalid Login Scenarios">
+<arg>standard_us</arg>
+<arg>secret_sauce</arg>
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtbox_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:46.326" level="INFO">Typing text 'standard_us' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:46.323" endtime="20230425 18:17:46.447"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtbox_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:46.447" level="INFO">Typing text 'secret_sauce' into text field 'xpath://*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:46.447" endtime="20230425 18:17:46.557"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230425 18:17:46.561" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230425 18:17:46.557" endtime="20230425 18:17:46.604"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230425 18:17:48.605" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230425 18:17:46.605" endtime="20230425 18:17:48.605"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${txt_error}</arg>
+<arg>${error_msg}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230425 18:17:48.626" level="INFO">Element 'xpath://*[@id="login_button_container"]/div/form/div[3]/h3' contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<status status="PASS" starttime="20230425 18:17:48.605" endtime="20230425 18:17:48.626"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:46.323" endtime="20230425 18:17:48.626"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:46.318" endtime="20230425 18:17:48.626"/>
+</test>
+<kw name="Finish Testcase" library="Common_Datadriven" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230425 18:17:48.628" endtime="20230425 18:17:51.043"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:48.627" endtime="20230425 18:17:51.044"/>
+</kw>
+<status status="PASS" starttime="20230425 18:17:29.558" endtime="20230425 18:17:51.045"/>
+</suite>
+<doc>[https://pabot.org/?ref=log|Pabot] result from 2 executions.</doc>
+<status status="PASS" starttime="20230425 18:17:29.501" endtime="20230425 18:17:51.059"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="0" skip="0">All Tests</stat>
+<stat pass="12" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="6" fail="0" skip="0" id="s1" name="DataDriven builtin">DataDriven builtin</stat>
+<stat pass="12" fail="0" skip="0" id="s1" name="Suites">Suites</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s1" name="DataDriven CSV">Suites.DataDriven CSV</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s2" name="DataDriven builtin">Suites.DataDriven builtin</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230425 18:17:35.487" level="WARN">Multiple tests with name 'Verify Login Fails with Invalid Creds' executed in suite 'Suites.DataDriven CSV'.</msg>
+<msg timestamp="20230425 18:17:36.727" level="WARN">Multiple tests with name 'Verify Login Fails with Invalid Creds' executed in suite 'Suites.DataDriven CSV'.</msg>
+<msg timestamp="20230425 18:17:38.048" level="WARN">Multiple tests with name 'Verify Login Fails with Invalid Creds' executed in suite 'Suites.DataDriven CSV'.</msg>
+<msg timestamp="20230425 18:17:39.304" level="WARN">Multiple tests with name 'Verify Login Fails with Invalid Creds' executed in suite 'Suites.DataDriven CSV'.</msg>
+<msg timestamp="20230425 18:17:40.717" level="WARN">Multiple tests with name 'Verify Login Fails with Invalid Creds' executed in suite 'Suites.DataDriven CSV'.</msg>
 </errors>
 </robot>

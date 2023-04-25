@@ -1,7 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
 Resource  ../../../Resources/Common_Datadriven.robot
-Library  DataDriver  ../../../Resources/TestData.csv
+Library  DataDriver  ../../../Resources/TestData.xlsx  sheet_name=Sheet1
 
 Suite Setup  Common_Datadriven.Start TestCase
 Test Template  Invalid Login Scenarios

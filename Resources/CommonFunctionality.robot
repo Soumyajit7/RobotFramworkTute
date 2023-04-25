@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Resource  ./Common_Datadriven.robot
 
 *** Keywords ***
 Start TestCase
